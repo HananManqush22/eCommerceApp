@@ -7,14 +7,16 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
     this.suffixIcon,
     this.isSecured = false,
+    required this.keyboardType,
   });
   final String hintText;
   final Widget? suffixIcon;
   final bool isSecured;
+  final TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: keyboardType,
       validator: (value) {
         if (value == null && value!.isEmpty) {
           return "This Field Is Required";

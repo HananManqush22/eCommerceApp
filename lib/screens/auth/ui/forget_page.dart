@@ -30,7 +30,10 @@ class ForgetPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     spacing: 16,
                     children: [
-                      const CustomTextFormField(hintText: 'Email'),
+                      const CustomTextFormField(
+                        hintText: 'Email',
+                        keyboardType: TextInputType.emailAddress,
+                      ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.kPrimaryColor,

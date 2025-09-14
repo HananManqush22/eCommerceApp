@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/configuration/colors.dart';
 import 'package:e_commerce_app/configuration/function.dart';
 import 'package:e_commerce_app/screens/login/forget_page.dart';
+import 'package:e_commerce_app/screens/login/sing_up_page.dart';
 import 'package:e_commerce_app/widgets/custom_row_login.dart';
 import 'package:e_commerce_app/widgets/custom_text_button.dart';
 import 'package:e_commerce_app/widgets/custom_text_form_field.dart';
@@ -35,9 +36,13 @@ class LoginPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     spacing: 16,
                     children: [
-                      const CustomTextFormField(hintText: 'Email'),
+                      const CustomTextFormField(
+                        hintText: 'Email',
+                        keyboardType: TextInputType.emailAddress,
+                      ),
                       CustomTextFormField(
                         hintText: 'Password',
+                        keyboardType: TextInputType.visiblePassword,
                         isSecured: true,
                         suffixIcon: IconButton(
                           onPressed: () {},
@@ -55,18 +60,23 @@ class LoginPage extends StatelessWidget {
                         text: 'Login whit Google',
                         onPressed: () {},
                       ),
-                      const Row(
+                      Row(
                         spacing: 5,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            'Already have an account?',
+                          const Text(
+                            "Don't have an account?",
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          CustomTextButton(text: 'Sing Up'),
+                          CustomTextButton(
+                            text: 'Sing Up',
+                            onTap: () {
+                              navigateTo(context, const SingUpPage());
+                            },
+                          ),
                         ],
                       ),
                     ],
