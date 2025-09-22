@@ -1,10 +1,11 @@
 import 'package:e_commerce_app/configuration/colors.dart';
 import 'package:e_commerce_app/configuration/function.dart';
-import 'package:e_commerce_app/screens/login/forget_page.dart';
-import 'package:e_commerce_app/screens/login/sing_up_page.dart';
-import 'package:e_commerce_app/widgets/custom_row_login.dart';
-import 'package:e_commerce_app/widgets/custom_text_button.dart';
-import 'package:e_commerce_app/widgets/custom_text_form_field.dart';
+import 'package:e_commerce_app/screens/auth/ui/forget_page.dart';
+import 'package:e_commerce_app/screens/auth/ui/sing_up_page.dart';
+import 'package:e_commerce_app/screens/auth/ui/widgets/custom_row_login.dart';
+import 'package:e_commerce_app/screens/auth/ui/widgets/custom_text_button.dart';
+import 'package:e_commerce_app/screens/auth/ui/widgets/custom_text_form_field.dart';
+import 'package:e_commerce_app/screens/nav_bar/ui/main_home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -16,14 +17,13 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(height: 25),
               const Text(
                 'Welcome To Our Market',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
               Card(
                 color: AppColors.kWhiteColor,
                 margin: EdgeInsets.all(24),
@@ -55,7 +55,12 @@ class LoginPage extends StatelessWidget {
                           navigateTo(context, ForgetPage());
                         },
                       ),
-                      CustomRowLogin(text: 'Login', onPressed: () {}),
+                      CustomRowLogin(
+                        text: 'Login',
+                        onPressed: () {
+                          navigateTo(context, MainHomePage());
+                        },
+                      ),
                       CustomRowLogin(
                         text: 'Login whit Google',
                         onPressed: () {},

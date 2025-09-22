@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/configuration/colors.dart';
-import 'package:e_commerce_app/screens/login/login_page.dart';
+import 'package:e_commerce_app/screens/nav_bar/ui/main_home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(scaffoldBackgroundColor: AppColors.kScaffoldColor),
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      home: MainHomePage(),
     );
   }
 }

@@ -1,9 +1,9 @@
 import 'package:e_commerce_app/configuration/colors.dart';
 import 'package:e_commerce_app/configuration/function.dart';
-import 'package:e_commerce_app/screens/login/login_page.dart';
-import 'package:e_commerce_app/widgets/custom_row_login.dart';
-import 'package:e_commerce_app/widgets/custom_text_button.dart';
-import 'package:e_commerce_app/widgets/custom_text_form_field.dart';
+import 'package:e_commerce_app/screens/auth/ui/login_page.dart';
+import 'package:e_commerce_app/screens/auth/ui/widgets/custom_row_login.dart';
+import 'package:e_commerce_app/screens/auth/ui/widgets/custom_text_button.dart';
+import 'package:e_commerce_app/screens/auth/ui/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 class SingUpPage extends StatelessWidget {
@@ -15,14 +15,13 @@ class SingUpPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(height: 25),
               const Text(
                 'Welcome To Our Market',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
               Card(
                 color: AppColors.kWhiteColor,
                 margin: EdgeInsets.all(24),
