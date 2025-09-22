@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/configuration/components/product_list.dart';
 import 'package:flutter/material.dart';
 
 class FavoritePage extends StatelessWidget {
@@ -5,6 +6,21 @@ class FavoritePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('FavoritePage page'));
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListView(
+        children: [
+          Center(
+            child: const Text(
+              'Your Favorite Product ',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 15),
+
+          ProductsList(),
+        ],
+      ),
+    );
   }
 }
