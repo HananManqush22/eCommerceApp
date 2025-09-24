@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/configuration/colors.dart';
-import 'package:e_commerce_app/configuration/function.dart';
+import 'package:e_commerce_app/configuration/function/navigate_to.dart';
 import 'package:e_commerce_app/screens/auth/ui/login_page.dart';
 import 'package:e_commerce_app/screens/auth/ui/widgets/custom_row_login.dart';
 import 'package:e_commerce_app/screens/auth/ui/widgets/custom_text_button.dart';

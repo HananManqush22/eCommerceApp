@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/configuration/colors.dart';
-import 'package:e_commerce_app/configuration/function.dart';
+import 'package:e_commerce_app/configuration/function/navigate_to.dart';
+import 'package:e_commerce_app/screens/profile/my_orders_page.dart';
 import 'package:e_commerce_app/screens/profile/ui/edit_name_page.dart';
 import 'package:e_commerce_app/screens/profile/ui/widgets/custom_row_btn.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class ProfilePage extends StatelessWidget {
                   text: 'User Email',
                 ),
                 CustomRowBtn(
-                  onTap: () {},
+                  onTap: () => navigateTo(context, const MyOrdersPage()),
                   icon: Icons.shopping_basket,
                   text: 'My Orders',
                 ),
