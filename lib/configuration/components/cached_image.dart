@@ -8,6 +8,8 @@ class CachedImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
+      width: MediaQuery.sizeOf(context).width,
+      height: 250,
       imageUrl: url,
       progressIndicatorBuilder: (context, url, downloadProgress) =>
           SizedBox(height: 200, child: CenterProgressIndicator()),
