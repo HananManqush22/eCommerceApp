@@ -1,5 +1,5 @@
-import 'package:e_commerce_app/configuration/components/custom_search_field.dart';
-import 'package:e_commerce_app/configuration/components/product_list.dart';
+import 'package:e_commerce_app/core/components/custom_search_field.dart';
+import 'package:e_commerce_app/core/components/product_list.dart';
 import 'package:e_commerce_app/screens/home/ui/widget/categories_list.dart';
 import 'package:flutter/material.dart';
 

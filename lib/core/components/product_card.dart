@@ -1,17 +1,19 @@
-import 'package:e_commerce_app/configuration/colors.dart';
-import 'package:e_commerce_app/configuration/components/cached_image.dart';
-import 'package:e_commerce_app/configuration/components/custom_e_button.dart';
-import 'package:e_commerce_app/configuration/function/navigate_to.dart';
-import 'package:e_commerce_app/screens/products/product_details_page.dart';
+import 'package:e_commerce_app/core/colors.dart';
+import 'package:e_commerce_app/core/components/cached_image.dart';
+import 'package:e_commerce_app/core/components/custom_e_button.dart';
+import 'package:e_commerce_app/core/function/navigate_to.dart';
+import 'package:e_commerce_app/screens/products/logic/model/product_model.dart';
+import 'package:e_commerce_app/screens/product_details/ui/product_details_page.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
-
+  const ProductCard({super.key, required this.productList});
+  final ProductModel productList;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => navigateTo(context, const ProductDetailsPage()),
+      onTap: () =>
+          navigateTo(context, ProductDetailsPage(productDetail: productList)),
       child: Card(
         color: AppColors.kWhiteColor,
         shape: const RoundedRectangleBorder(
@@ -46,7 +48,7 @@ class ProductCard extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      '10% OFF',
+                      '${productList.sale}% OFF',
                       style: TextStyle(color: AppColors.kWhiteColor),
                     ),
                   ),
@@ -62,7 +64,7 @@ class ProductCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Product Name',
+                        "${productList.productName}",
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -77,14 +79,14 @@ class ProductCard extends StatelessWidget {
                       Column(
                         children: [
                           Text(
-                            '100 LE',
+                            '${productList.price} LE',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            '150 LE',
+                            '${productList.oldPrice} LE',
                             style: TextStyle(
                               fontSize: 16,
                               decoration: TextDecoration.lineThrough,

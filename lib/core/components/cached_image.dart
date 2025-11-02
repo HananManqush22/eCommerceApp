@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commerce_app/configuration/components/center_progress_indicator.dart';
+import 'package:e_commerce_app/core/components/center_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 class CachedImage extends StatelessWidget {

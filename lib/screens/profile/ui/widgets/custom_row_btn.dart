@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/configuration/colors.dart';
+import 'package:e_commerce_app/core/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomRowBtn extends StatelessWidget {
@@ -7,10 +7,12 @@ class CustomRowBtn extends StatelessWidget {
     required this.icon,
     this.onTap,
     required this.text,
+    this.isLoading = false,
   });
   final IconData icon;
   final void Function()? onTap;
   final String text;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -26,7 +28,9 @@ class CustomRowBtn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Icon(icon, color: AppColors.kWhiteColor),
-              Text(text, style: TextStyle(color: AppColors.kWhiteColor)),
+              isLoading
+                  ? CircularProgressIndicator(color: AppColors.kWhiteColor)
+                  : Text(text, style: TextStyle(color: AppColors.kWhiteColor)),
               Icon(Icons.arrow_forward_ios, color: AppColors.kWhiteColor),
             ],
           ),

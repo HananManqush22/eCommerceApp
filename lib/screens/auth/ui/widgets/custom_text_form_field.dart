@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/configuration/colors.dart';
+import 'package:e_commerce_app/core/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -8,15 +8,19 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.isSecured = false,
     required this.keyboardType,
+    required this.controller,
   });
   final String hintText;
   final Widget? suffixIcon;
   final bool isSecured;
   final TextInputType? keyboardType;
+  final TextEditingController controller;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: keyboardType,
+      controller: controller,
       validator: (value) {
         if (value == null && value!.isEmpty) {
           return "This Field Is Required";
